@@ -1,0 +1,22 @@
+﻿Сборка начата 12.10.2018 0:34:51.
+     1>Проект "C:\Users\Rainor\source\repos\cppprog\cppprog\cppprog.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Создание "Debug\cppprog.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.13.26128\bin\HostX86\x86\CL.exe /c /ZI /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt Date.cpp Header.cpp
+         Date.cpp
+     1>c:\users\rainor\source\repos\cppprog\cppprog\date.cpp(11): error C2059: синтаксическая ошибка: .
+         Header.cpp
+         Создание кода...
+     1>Сборка проекта "C:\Users\Rainor\source\repos\cppprog\cppprog\cppprog.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+       "C:\Users\Rainor\source\repos\cppprog\cppprog\cppprog.vcxproj" (целевой объект Build ) (1) ->
+       (ClCompile конечный объект) -> 
+         c:\users\rainor\source\repos\cppprog\cppprog\date.cpp(11): error C2059: синтаксическая ошибка: .
+
+    Предупреждений: 0
+    Ошибок: 1
+
+Прошло времени 00:00:01.06
