@@ -2,7 +2,6 @@
 #include <string>
 class Date
 {
-	friend int hi();
 	struct DateS {
 		int day;
 		std::string weekDay;
@@ -31,7 +30,12 @@ public:
 	int getMounth();
 	int getYear();
 	std::string getWeekDay();
+	void setDay();
+	void setMounth();
+	void setYear();
+	void setWeekDay();
 };
+
 
 Date::Date() {
 
