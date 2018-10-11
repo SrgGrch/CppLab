@@ -8,5 +8,6 @@ int main() {
 	Date d2 = Date(20, "Пятница", 2, 2018);
 	Date d3;
 	d3 = d2.comp(d1, d2);
+	d3.setMounth(4);
 	_getch();
 } 

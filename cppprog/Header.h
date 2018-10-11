@@ -30,10 +30,10 @@ public:
 	int getMounth();
 	int getYear();
 	std::string getWeekDay();
-	void setDay();
-	void setMounth();
-	void setYear();
-	void setWeekDay();
+	void setDay(int d);
+	void setMounth(int m);
+	void setYear(int y);
+	void setWeekDay(std::string s);
 };
 
 
@@ -88,6 +88,26 @@ inline int Date::getYear()
 inline std::string Date::getWeekDay()
 {
 	return date.weekDay;
+}
+
+inline void Date::setDay(int d)
+{
+	date.day = d;
+}
+
+inline void Date::setMounth(int m)
+{
+	date.mounth = m;
+}
+
+inline void Date::setYear(int y)
+{
+	date.year = y;
+}
+
+inline void Date::setWeekDay(std::string s)
+{
+	date.weekDay = s;
 }
 
 
