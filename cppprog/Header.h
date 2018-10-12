@@ -149,7 +149,7 @@ inline int Date::operator-(Date d)
 
 inline Date::operator int()
 {
-	return dateToDays();
+	return dateToDays();	
 }
 
 
