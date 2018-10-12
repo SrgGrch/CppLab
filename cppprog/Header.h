@@ -17,9 +17,7 @@ class Date
 		{};
 
 		DateS() {};
-		//void get(int*, std::string*, int*, int*);
 	};
-	//DateS date;
 private:
 	DateS date;
 	int mDays[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };

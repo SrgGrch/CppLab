@@ -18,6 +18,6 @@ int main() {
 	d3 = d2.comp(d1, d2);
 	d3.setMounth(4);
 	++d3;
-	std::cout << yearDay(d2);
+	std::cout << yearDay(++d2) << ' '<< d2 - d3 << ' ' << d3 + 23;
 	_getch();
 } 
