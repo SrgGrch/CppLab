@@ -2,6 +2,7 @@
 #include <string>
 class Date
 {
+	friend int yearDay(Date date);
 	struct DateS {
 		int day;
 		std::string weekDay;
@@ -149,7 +150,7 @@ inline int Date::operator-(Date d)
 
 inline Date::operator int()
 {
-	return dateToDays();	
+	return dateToDays();
 }
 
 
