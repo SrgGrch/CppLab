@@ -1,20 +1,22 @@
-﻿Сборка начата 12.10.2018 1:45:59.
+﻿Сборка начата 12.10.2018 1:49:00.
      1>Проект "C:\Users\Rainor\Projects\Срр\cppprog\cppprog\cppprog.vcxproj" в узле 2 (целевые объекты Build).
      1>InitializeBuildStatus:
          Создание "Debug\cppprog.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.13.26128\bin\HostX86\x86\CL.exe /c /ZI /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt Date.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.13.26128\bin\HostX86\x86\CL.exe /c /ZI /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt Date.cpp Header.cpp
          Date.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.13.26128\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.lib" /MACHINE:X86 Debug\Date.obj
-         cppprog.vcxproj -> C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.exe
-       FinalizeBuildStatus:
-         Файл "Debug\cppprog.tlog\unsuccessfulbuild" удаляется.
-         Обращение к "Debug\cppprog.tlog\cppprog.lastbuildstate".
-     1>Сборка проекта "C:\Users\Rainor\Projects\Срр\cppprog\cppprog\cppprog.vcxproj" завершена (целевые объекты Build).
+         Header.cpp
+     1>c:\users\rainor\projects\срр\cppprog\cppprog\header.cpp(5): error C3861: dateToDays: идентификатор не найден
+         Создание кода...
+     1>Сборка проекта "C:\Users\Rainor\Projects\Срр\cppprog\cppprog\cppprog.vcxproj" завершена (целевые объекты Build) с ошибкой.
 
-Сборка успешно завершена.
+Ошибка сборки.
+
+       "C:\Users\Rainor\Projects\Срр\cppprog\cppprog\cppprog.vcxproj" (целевой объект Build ) (1) ->
+       (ClCompile конечный объект) -> 
+         c:\users\rainor\projects\срр\cppprog\cppprog\header.cpp(5): error C3861: dateToDays: идентификатор не найден
+
     Предупреждений: 0
-    Ошибок: 0
+    Ошибок: 1
 
-Прошло времени 00:00:00.97
+Прошло времени 00:00:00.98
