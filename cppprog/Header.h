@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include <fstream>
+#include <iostream>
+
 class Date
 {
 	struct DateS {
@@ -40,16 +43,21 @@ public:
 	void setWeekDay(std::string s);
 	void nextDay();
 
+	friend std::ostream& operator<<(std::ostream &out, const Date &date);
+	friend std::ofstream& operator<<(std::ofstream &f,  Date & date);
+	friend std::ifstream& operator>>(std::ifstream &f, Date & date);
+	
+	friend std::ofstream& operator<<(std::ofstream &f,  Date & date);
+	friend std::ifstream& operator>>(std::ifstream &f, Date & date);
 	Date& operator++();       // Prefix increment operator.  
 	Date operator++(int);     // Postfix increment operator.  
-	int operator - (Date d); // кол-во дней между двумя датами
+	int operator-(Date d); // кол-во дней между двумя датами
 
 	operator int();
 };
 
 
 Date::Date() {
-
 }
 
 inline int Date::dateToDays()
@@ -66,7 +74,6 @@ inline int Date::dateToDays()
 Date::Date(int _day, std::string _weekDay, int _mounth, int _year)
 {
 	date = DateS(_day, _weekDay, _mounth, _year);
-
 }
 
 Date::~Date()
