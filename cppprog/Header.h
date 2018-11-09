@@ -43,10 +43,10 @@ public:
 	void setWeekDay(std::string s);
 	void nextDay();
 
+	void binWrite(std::string name);
+	void binRead(std::string name);
+
 	friend std::ostream& operator<<(std::ostream &out, const Date &date);
-	friend std::ofstream& operator<<(std::ofstream &f,  Date & date);
-	friend std::ifstream& operator>>(std::ifstream &f, Date & date);
-	
 	friend std::ofstream& operator<<(std::ofstream &f,  Date & date);
 	friend std::ifstream& operator>>(std::ifstream &f, Date & date);
 	Date& operator++();       // Prefix increment operator.  
@@ -132,6 +132,23 @@ inline void Date::nextDay()
 	if (date.day + 1 <= mDays[date.mounth]) date.day++;
 	else if (date.mounth < 12) { date.day = 1; date.mounth++; }
 	else { date.day = 1; date.mounth = 1; date.year++; }
+}
+
+inline void Date::binWrite(std::string name)
+{
+	std::ofstream o;
+	o.open(name, std::ios::binary);
+	o.write((char*)&(this->date), sizeof(this->date));
+	o.close();
+}
+
+inline void Date::binRead(std::string name)
+{
+	std::ifstream i;
+	i.open(name, std::ios::binary);
+	i.read((char*)&(this->date), sizeof(this->date));
+
+	i.close();
 }
 
 inline Date & Date::operator++()
