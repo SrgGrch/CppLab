@@ -22,7 +22,8 @@
     <ClCompile Include="Date.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="PlaneEvent.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -19,11 +19,11 @@ class Date
 		{};
 
 		DateS() {};
-		//void get(int*, std::string*, int*, int*);
 	};
 	//DateS date;
-private:
 	DateS date;
+private:
+	
 	int mDays[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 public:
@@ -43,8 +43,8 @@ public:
 	void setWeekDay(std::string s);
 	void nextDay();
 
-	void binWrite(std::string name);
-	void binRead(std::string name);
+	virtual void binWrite(std::string name);
+	virtual void binRead(std::string name);
 
 	friend std::ostream& operator<<(std::ostream &out, const Date &date);
 	friend std::ofstream& operator<<(std::ofstream &f,  Date & date);
@@ -135,7 +135,7 @@ inline void Date::nextDay()
 }
 
 inline void Date::binWrite(std::string name)
-{
+{	
 	std::ofstream o;
 	o.open(name, std::ios::binary);
 	o.write((char*)&(this->date), sizeof(this->date));
@@ -147,7 +147,6 @@ inline void Date::binRead(std::string name)
 	std::ifstream i;
 	i.open(name, std::ios::binary);
 	i.read((char*)&(this->date), sizeof(this->date));
-
 	i.close();
 }
 
@@ -175,5 +174,82 @@ inline Date::operator int()
 {
 	return dateToDays();
 }
+
+
+#include "Date.h"
+class PlaneEvent : public Date
+{
+	struct DateE {
+		int day;
+		std::string weekDay;
+		int mounth;
+		int year;
+		std::string event;
+
+		DateE(int _day, std::string _weekDay, int _mounth, int _year, std::string _event) :
+			day(_day),
+			weekDay(_weekDay),
+			mounth(_mounth),
+			year(_year),
+			event(_event)
+		{};
+
+		DateE() {};
+		//void get(int*, std::string*, int*, int*);
+	};
+public:
+	PlaneEvent() : Date() {}
+	PlaneEvent(int _day, std::string _weekDay, int _mounth, int _year, std::string _event) : Date(_day, _weekDay, _mounth, _year), event(_event) {}
+
+	std::string getEvent();
+	void setEvent(std::string _event);
+	void binWrite(std::string name) {
+		DateE d = DateE(this->getDay(), this->getWeekDay(), this->getMounth(), this->getYear(), event);
+		std::ofstream o;
+		o.open(name, std::ios::binary);
+		o.write((char*)&(d), sizeof(d));
+		o.close();
+	};
+	void binRead(std::string name) {
+		std::ifstream i;
+		DateE d;
+		i.open(name, std::ios::binary);
+		i.read((char*)&(d), sizeof(d));
+		i.close();
+		*this = PlaneEvent(d.day, d.weekDay, d.mounth, d.year, d.event);
+	};
+
+private:
+	std::string event;
+};
+
+std::string PlaneEvent::getEvent()
+{
+	return event;
+}
+
+void PlaneEvent::setEvent(std::string _event)
+{
+	event = _event;
+}
+
+//void PlaneEvent::binWrite(std::string name)
+//{
+//	DateE d = DateE(this->getDay(), this->getWeekDay(), this->getMounth(), this->getYear(), event);
+//	std::ofstream o;
+//	o.open(name, std::ios::binary);
+//	o.write((char*)&(d), sizeof(d));
+//	o.close();
+//}
+//
+//void PlaneEvent::binRead(std::string name) {
+//	std::ifstream i;
+//	DateE d;
+//	i.open(name, std::ios::binary);
+//	i.read((char*)&(d), sizeof(d));
+//	i.close();
+//	*this = PlaneEvent(d.day, d.weekDay, d.mounth, d.year, d.event);
+//}
+
 
 

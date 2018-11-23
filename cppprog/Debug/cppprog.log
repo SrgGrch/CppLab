@@ -1,12 +1,12 @@
-﻿Сборка начата 09.11.2018 14:04:21.
+﻿Сборка начата 23.11.2018 12:13:22.
      1>Проект "C:\Users\Rainor\Projects\Срр\cppprog\cppprog\cppprog.vcxproj" в узле 2 (целевые объекты Build).
      1>InitializeBuildStatus:
-         Создание "Debug\cppprog.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
+         Обращение к "Debug\cppprog.tlog\unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.13.26128\bin\HostX86\x86\CL.exe /c /ZI /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt Date.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.14.26428\bin\HostX86\x86\CL.exe /c /ZI /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt Date.cpp
          Date.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.13.26128\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.lib" /MACHINE:X86 Debug\Date.obj
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.14.26428\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.lib" /MACHINE:X86 Debug\Date.obj
          cppprog.vcxproj -> C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.exe
        FinalizeBuildStatus:
          Файл "Debug\cppprog.tlog\unsuccessfulbuild" удаляется.
@@ -17,4 +17,4 @@
     Предупреждений: 0
     Ошибок: 0
 
-Прошло времени 00:00:01.46
+Прошло времени 00:00:01.48
