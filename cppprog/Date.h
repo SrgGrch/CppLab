@@ -23,7 +23,7 @@ class Date
 	//DateS date;
 	DateS date;
 private:
-	
+
 	int mDays[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 public:
@@ -47,7 +47,7 @@ public:
 	virtual void binRead(std::string name);
 
 	friend std::ostream& operator<<(std::ostream &out, const Date &date);
-	friend std::ofstream& operator<<(std::ofstream &f,  Date & date);
+	friend std::ofstream& operator<<(std::ofstream &f, Date & date);
 	friend std::ifstream& operator>>(std::ifstream &f, Date & date);
 	Date& operator++();       // Prefix increment operator.  
 	Date operator++(int);     // Postfix increment operator.  
@@ -64,7 +64,7 @@ inline int Date::dateToDays()
 {
 	int days = 0;
 	days = date.day;
-	for (int i = 0; i < date.mounth-1; i++) {
+	for (int i = 0; i < date.mounth - 1; i++) {
 		days += mDays[i];
 	}
 	days += date.year * 365 + date.year / 4 - date.year / 100 + date.year / 400;
@@ -135,24 +135,30 @@ inline void Date::nextDay()
 }
 
 inline void Date::binWrite(std::string name)
-{	
-	std::ofstream o;
-	o.open(name, std::ios::binary);
-	o.write((char*)&(this->date), sizeof(this->date));
-	o.close();
+{
+	if (name.find(".bin") == std::string::npos) throw 1;
+	else {
+		std::ofstream o;
+		o.open(name, std::ios::binary);
+		o.write((char*)&(this->date), sizeof(this->date));
+		o.close();
+	}
 }
 
 inline void Date::binRead(std::string name)
 {
-	std::ifstream i;
-	i.open(name, std::ios::binary);
-	i.read((char*)&(this->date), sizeof(this->date));
-	i.close();
+	if (name.find(".bin") == std::string::npos) throw 1;
+	else {
+		std::ifstream i;
+		i.open(name, std::ios::binary);
+		i.read((char*)&(this->date), sizeof(this->date));
+		i.close();
+	}
 }
 
 inline Date & Date::operator++()
 {
-	if (date.day + 1 <= mDays[date.mounth-1]) date.day++;
+	if (date.day + 1 <= mDays[date.mounth - 1]) date.day++;
 	else if (date.mounth < 12) { date.day = 1; date.mounth++; }
 	else { date.day = 1; date.mounth = 1; date.year++; }
 	return *this;
@@ -167,7 +173,7 @@ inline Date Date::operator++(int)
 
 inline int Date::operator-(Date d)
 {
-	return dateToDays() - d.dateToDays() > 0? dateToDays() - d.dateToDays(): d.dateToDays() - dateToDays();
+	return dateToDays() - d.dateToDays() > 0 ? dateToDays() - d.dateToDays() : d.dateToDays() - dateToDays();
 }
 
 inline Date::operator int()
@@ -175,9 +181,7 @@ inline Date::operator int()
 	return dateToDays();
 }
 
-
-#include "Date.h"
-class PlaneEvent : public Date
+class DateEvent : public Date
 {
 	struct DateE {
 		int day;
@@ -195,11 +199,11 @@ class PlaneEvent : public Date
 		{};
 
 		DateE() {};
-		//void get(int*, std::string*, int*, int*);
 	};
 public:
-	PlaneEvent() : Date() {}
-	PlaneEvent(int _day, std::string _weekDay, int _mounth, int _year, std::string _event) : Date(_day, _weekDay, _mounth, _year), event(_event) {}
+	DateEvent() : Date() {}
+	DateEvent(int _day, std::string _weekDay, int _mounth, int _year, std::string _event) : Date(_day, _weekDay, _mounth, _year), event(_event) {}
+	DateEvent(int _day, int _mounth, int _year) : Date(_day, "sd", _mounth, _year), event("asdas") {}
 
 	std::string getEvent();
 	void setEvent(std::string _event);
@@ -210,46 +214,27 @@ public:
 		o.write((char*)&(d), sizeof(d));
 		o.close();
 	};
+
 	void binRead(std::string name) {
 		std::ifstream i;
 		DateE d;
 		i.open(name, std::ios::binary);
 		i.read((char*)&(d), sizeof(d));
 		i.close();
-		*this = PlaneEvent(d.day, d.weekDay, d.mounth, d.year, d.event);
+		*this = DateEvent(d.day, d.mounth, d.year);
 	};
 
 private:
 	std::string event;
 };
 
-std::string PlaneEvent::getEvent()
+std::string DateEvent::getEvent()
 {
 	return event;
 }
 
-void PlaneEvent::setEvent(std::string _event)
+void DateEvent::setEvent(std::string _event)
 {
 	event = _event;
 }
-
-//void PlaneEvent::binWrite(std::string name)
-//{
-//	DateE d = DateE(this->getDay(), this->getWeekDay(), this->getMounth(), this->getYear(), event);
-//	std::ofstream o;
-//	o.open(name, std::ios::binary);
-//	o.write((char*)&(d), sizeof(d));
-//	o.close();
-//}
-//
-//void PlaneEvent::binRead(std::string name) {
-//	std::ifstream i;
-//	DateE d;
-//	i.open(name, std::ios::binary);
-//	i.read((char*)&(d), sizeof(d));
-//	i.close();
-//	*this = PlaneEvent(d.day, d.weekDay, d.mounth, d.year, d.event);
-//}
-
-
 

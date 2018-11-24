@@ -1,10 +1,11 @@
-﻿Сборка начата 23.11.2018 12:13:22.
+﻿Сборка начата 24.11.2018 10:54:06.
      1>Проект "C:\Users\Rainor\Projects\Срр\cppprog\cppprog\cppprog.vcxproj" в узле 2 (целевые объекты Build).
      1>InitializeBuildStatus:
-         Обращение к "Debug\cppprog.tlog\unsuccessfulbuild".
+         Создание "Debug\cppprog.tlog\unsuccessfulbuild", так как было задано "AlwaysCreate".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.14.26428\bin\HostX86\x86\CL.exe /c /ZI /nologo /W3 /WX- /diagnostics:classic /sdl /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc141.pdb" /Gd /TP /analyze- /FC /errorReport:prompt Date.cpp
          Date.cpp
+     1>c:\users\rainor\projects\срр\cppprog\cppprog\date.cpp(38): warning C4101: a: неиспользованная локальная переменная
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Tools\MSVC\14.14.26428\bin\HostX86\x86\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.lib" /MACHINE:X86 Debug\Date.obj
          cppprog.vcxproj -> C:\Users\Rainor\Projects\Срр\cppprog\Debug\cppprog.exe
@@ -14,7 +15,12 @@
      1>Сборка проекта "C:\Users\Rainor\Projects\Срр\cppprog\cppprog\cppprog.vcxproj" завершена (целевые объекты Build).
 
 Сборка успешно завершена.
-    Предупреждений: 0
+
+       "C:\Users\Rainor\Projects\Срр\cppprog\cppprog\cppprog.vcxproj" (целевой объект Build ) (1) ->
+       (ClCompile конечный объект) -> 
+         c:\users\rainor\projects\срр\cppprog\cppprog\date.cpp(38): warning C4101: a: неиспользованная локальная переменная
+
+    Предупреждений: 1
     Ошибок: 0
 
-Прошло времени 00:00:01.48
+Прошло времени 00:00:01.76

@@ -30,16 +30,15 @@ std::ifstream & operator>>(std::ifstream &f, Date &date)
 }
 
 int main() {
-	Date d1 = Date(30, "Friday",9, 2018);
-	Date d2 = Date(20, "Friday", 9, 2017);
-	Date d3;
-	Date d4;
-	Date d5;
-	PlaneEvent p = PlaneEvent(30, "Friday", 9, 2018, "adasdasd");
-	//PlaneEvent n = PlaneEvent(30, "Friday", 9, 2018, "adasdasd");
+	Date d = Date(12, "sadasd", 3, 1234);
 
-	p.binWrite("PE.bin");
-	//p.binRead("PE.bin");
-	std::cout << p.getEvent();
+	try {
+		d.binWrite("i");
+	}
+	catch (int a) {
+		std::cout << "¬веден файл с неверным расширением, надо использовать bin";
+	}
+
+	//std::cout << n.getEvent();
 	_getch();
 } 
