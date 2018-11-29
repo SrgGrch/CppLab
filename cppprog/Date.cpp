@@ -33,12 +33,11 @@ int main() {
 	Date d = Date(12, "sadasd", 3, 1234);
 
 	try {
-		d.binWrite("i");
+		d.binWrite("i.bin");
 	}
 	catch (int a) {
-		std::cout << "¬веден файл с неверным расширением, надо использовать bin";
+		std::cout << "File has wrong extension, you should use .bin";
 	}
 
-	//std::cout << n.getEvent();
 	_getch();
 } 
